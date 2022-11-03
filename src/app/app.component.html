@@ -1,0 +1,8 @@
+
+<router-outlet></router-outlet>
+<h1>Weather</h1>
+<div class="flex">
+  <app-weather-card *ngFor="let meteo of meteos"  [meteo]="meteo"></app-weather-card>
+</div>
+
+

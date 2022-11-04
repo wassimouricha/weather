@@ -10,12 +10,16 @@
         }
     }
 
-    // .card-body{
-
-    // }
-
     .card-footer{
             display: flex;
             justify-content: space-around;
+    }
+
+    img{
+        width: 1.5em;
+    }
+
+    ul,li{
+        list-style: none;
     }
 }

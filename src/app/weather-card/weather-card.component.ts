@@ -1,6 +1,6 @@
 import { Component, OnInit , Input} from '@angular/core';
-import { Meteo } from '../meteo';
-import { MeteoService } from '../meteo.service';
+import { Meteo } from '../meteo/meteo';
+import { MeteoService } from '../meteo/meteo.service';
 
 @Component({
   selector: 'app-weather-card',
@@ -9,7 +9,7 @@ import { MeteoService } from '../meteo.service';
 })
 export class WeatherCardComponent implements OnInit {
 
-  @Input() meteo!: Meteo;
+  @Input() meteo: any;
 
   constructor(private meteoService: MeteoService) { 
 

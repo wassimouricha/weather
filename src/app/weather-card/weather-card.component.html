@@ -1,17 +1,19 @@
 <div class="card">
     <div class="card-header">
-        <h3 class="card-title">{{ meteo.base }} </h3>
+        <h2 class="card-title"> {{meteo.name}}  <img src="https://openweathermap.org/img/w/{{meteo.weather[0].icon}}.png" alt=""></h2>
     </div>
     <div class="card-body">
-        <p>
-            {{ meteo.id }}
-        </p>
-        <p>
-                {{meteo.name}}
-        </p>
-        <p>
-            {{meteo.timezone}}
-        </p>
+        <h3>
+            {{meteo.weather[0].description | titlecase}}
+        </h3>
+    </div>
+    <div>
+        <ul>
+            <li> Température : {{ meteo.main.temp }} °C</li>
+            <li> Température min: {{ meteo.main.temp_min }} °C</li>
+            <li> Température max: {{ meteo.main.temp_max }} °C</li>
+            <li> Vent: {{ meteo.wind.speed}} KM/H  {{ meteo.wind.deg}}</li>
+        </ul>
     </div>
     <div class="card-footer">
 

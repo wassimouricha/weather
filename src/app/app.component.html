@@ -1,8 +1,28 @@
 
 <router-outlet></router-outlet>
-<h1>Weather</h1>
+<div class="bodypage">
+  <h1>Weather</h1>
+<!-- Formulaire pour rentrer le nom de la ville -->
+
+<form (ngSubmit)="voirMeteo()">
+      <div>
+        <label for="ville">Ville</label> <input name="ville" id="ville" type="text" [(ngModel)]="ville">
+      </div>
+      <button type="submit">Voir la méteo</button>
+      <button type="button" (click)="voirMeteoLocale()">Voir la méteo locale 🚩</button>
+</form>
+
+<p>
+  {{ville | json}}
+</p>
+</div>
+
+
+
+
+<!-- affichage de la méteo -->
 <div class="flex">
-  <app-weather-card *ngFor="let meteo of meteos"  [meteo]="meteo"></app-weather-card>
+  <app-weather-card *ngIf="meteo" [meteo]="meteo"></app-weather-card>
 </div>
 
 
